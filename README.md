@@ -1,12 +1,14 @@
 # Tinkoff Fintech Student App
 
-An Android client for the [Tinkoff Fintech](https://fintech.tinkoff.ru) school portal. Students use it to track events, course progress, homework and their ranking among other students.
+An Android client for the Tinkoff Fintech school portal. Students use it to track events, course progress, homework and their ranking among other students.
 
-Built in Kotlin with Clean Architecture, MVVM, Dagger 2 and RxJava. It works with the real portal API and stays usable offline thanks to a local cache.
+Built in Kotlin with Clean Architecture, MVVM, Dagger 2 and RxJava. It was built against the real portal API and stays usable offline thanks to a local cache.
+
+> **Note:** this project was built in 2019 during the Tinkoff Fintech school. The portal API it relies on (`fintech.tinkoff.ru`) is no longer available, so the app can't sign in or load fresh data anymore. The screenshots below were taken while the portal was live.
 
 ## Highlights
 
-- **Real API integration**: cookie-based authorization against the live `fintech.tinkoff.ru` API, with session persistence and a graceful return to sign-in when the session expires.
+- **Real API integration**: cookie-based authorization against the production `fintech.tinkoff.ru` API, with session persistence and a graceful return to sign-in when the session expires.
 - **Offline-first data layer**: every screen shows cached data from Room instantly, then refreshes from the network, with a cache lifetime that prevents redundant requests.
 - **Clean Architecture**: separate `data`, `domain` and `presentation` layers, repository interfaces in the domain layer, and mappers between network, database and domain models.
 - **Reactive UI**: RxJava streams from repositories through ViewModels to the views, with loading state and typed errors handled in one place.
@@ -74,4 +76,4 @@ Data flows one way: **API / Room → Repository → ViewModel → View**. Reposi
 ./gradlew assembleDebug
 ```
 
-Or open the project in Android Studio and run the `app` configuration. Signing in requires a Tinkoff Fintech portal account. The app's UI is in Russian.
+Or open the project in Android Studio and run the `app` configuration. The app's UI is in Russian.
