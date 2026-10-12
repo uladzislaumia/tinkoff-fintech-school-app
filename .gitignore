@@ -5,3 +5,8 @@
 /*/.DS_Store
 /**/build
 /*/.externalNativeBuild
+/.gradle
+/local.properties
+/.idea
+.DS_Store
+/.externalNativeBuild
